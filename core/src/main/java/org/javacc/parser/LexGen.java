@@ -232,7 +232,7 @@ public class LexGen {
             continue;
           }
 
-          if (!Options.getNoDfa() && (lexerContext.curRE instanceof RStringLiteral)
+          if (!Options.getNoDfa() && ignoring == ignore && (lexerContext.curRE instanceof RStringLiteral)
               && !((RStringLiteral) lexerContext.curRE).image.equals("")) {
             ((RStringLiteral) lexerContext.curRE).GenerateDfa(lexerContext.curRE.ordinal, lexerContext);
             if ((i != 0) && !lexerContext.mixed[lexerContext.lexStateIndex] && (ignoring != ignore)) {
